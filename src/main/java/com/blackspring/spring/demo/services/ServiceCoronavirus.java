@@ -21,9 +21,13 @@ import static java.lang.System.in;
 @Service
 public class ServiceCoronavirus {
 
-    private static String URL_LINK_CORONA = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+    private static String URL_LINK_CORONA = "\"https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
 
     private List<LocationStats> allStats = new ArrayList<>();
+
+    public List<LocationStats> getAllStats() {
+        return allStats;
+    }
 
     @PostConstruct
     @Scheduled(cron = "* * 1 * * *")
